@@ -1,0 +1,1199 @@
+@charset "UTF-8";
+/* === Variables === */
+:root {
+  --brand: #1e3a8a;
+  /* deep navy */
+  --brand-weak: #e0e7ff;
+  /* light indigo tint */
+  --accent: #7b1e3a;
+  /* academic burgundy */
+  --accent-weak: #fdf2f8;
+  --ink: #111827;
+  /* near-black */
+  --muted: #4b5563;
+  /* muted gray */
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* -------------------- Global Reset -------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: #1f2937;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* -------------------- Sections -------------------- */
+.section {
+  scroll-margin-top: 80px;
+  /* offset for sticky header */
+  max-width: 1100px;
+  padding: 48px 20px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-family: "Myriad Pro", sans-serif;
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  color: #276DBC;
+  border-bottom: 2px solid var(--brand-weak);
+  padding-bottom: 0.4rem;
+  margin-bottom: 12px;
+}
+
+.section h3 {
+  font-size: 1.1rem;
+  margin: 18px 0 8px;
+  color: #1f2937;
+}
+
+.section p {
+  margin-bottom: 12px;
+}
+
+.list {
+  padding-left: 18px;
+}
+
+.list li {
+  margin: 6px 0;
+}
+
+/* -------------------- Header -------------------- */
+/* === Header === */
+.site-header {
+  position: fixed;
+  /* always visible, even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-family: "Myriad Pro", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--accent-weak);
+}
+
+/* -------------------- Hero Grid (Home/About) -------------------- */
+/* ✅ Homepage Grid Layout */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* stack by default (mobile) */
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem 1rem;
+  gap: 40px; /* spacing between sidebar and content */
+}
+
+/* Sidebar (mobile = centered) */
+.sidebar {
+  background: transparent; /* remove box look */
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sidebar img.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.sidebar h1.name {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+}
+
+.sidebar .title {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.sidebar .contact {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.sidebar .contact li {
+  margin: 0.3rem 0;
+}
+
+.sidebar .contact a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.sidebar .contact a:hover {
+  text-decoration: underline;
+}
+
+.sidebar .facts {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  color: #444;
+  text-align: left;
+}
+
+/* Right column (main content) */
+.content {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #1f2937;
+}
+
+/* === Desktop 2-column layout === */
+@media (min-width: 900px) {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr; /* sidebar + content */
+    gap: 40px;
+    align-items: start;
+  }
+
+  .sidebar {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .sidebar img.avatar {
+    margin: 0 auto 1rem; /* keep avatar centered only */
+  }
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 6px auto 14px;
+  border: none;
+  /* ✅ removed halo */
+}
+
+.name {
+  text-align: center;
+  font-size: 1.35rem;
+}
+
+.title {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.contact {
+  list-style: none;
+  margin: 16px 0 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.contact a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.facts {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.fact-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.fact-value {
+  font-weight: 600;
+   color: #111827; /* dark ink */
+}
+
+.content {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  padding: 28px;
+}
+
+.info-cards {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.info-card {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.info-card h4 {
+  color: #1f2937;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+/* -------------------- Teaching -------------------- */
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* -------------------- Buttons -------------------- */
+.button {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.button[aria-disabled=true] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ✅ fixed */
+/* -------------------- Footer -------------------- */
+.site-footer {
+  text-align: center;
+  color: #020082;
+  border-top: 1px solid #e5e7eb;
+  padding: 22px 10px;
+  margin-top: 20px;
+}
+
+/* -------------------- Blog Readability -------------------- */
+:root {
+  --ink-strong: #111827;
+  --bg-tint: #fdfcf9;
+  --accent-warm: #276DBC;
+  --accent-warm-weak: #e0f2fe;
+  --ink: #111827;
+  --muted: #4b5563;
+  --bg: #faf7f2;
+  --card: #ffffff;
+  --border: 6px solid #e5edff;
+  --shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.blog {
+  background: linear-gradient(180deg, var(--bg-tint), #ffffff 40%);
+  border-radius: 18px;
+  padding-top: 100px;
+  padding-bottom: 56px;
+}
+
+.blog .post {
+  background: #ffffff;
+  border: 1px solid #dbe1f1;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.06);
+  padding: 26px;
+  margin-top: 18px;
+}
+
+.blog h2 {
+  color: var(--accent-warm);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.blog .post-header h3 {
+  color: var(--ink-strong);
+  font-size: clamp(1.25rem, 1rem + .8vw, 1.7rem);
+  margin-bottom: 6px;
+}
+
+.blog p {
+  color: #273043;
+}
+
+/* (rest of your CSS unchanged)... */
+/* Default desktop nav */
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--accent-weak);
+}
+
+/* Hamburger toggle button */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    /* hidden by default */
+    position: absolute;
+    top: 70px;
+    /* below header */
+    right: 0;
+    background: var(--brand, #1e3a8a);
+    width: 220px;
+    border-radius: 0 0 0 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav.show {
+    display: block;
+    /* revealed when toggled */
+  }
+
+  .nav ul {
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .nav li:last-child {
+    border-bottom: none;
+  }
+
+  .nav a {
+    display: block;
+    width: 100%;
+    color: #fff;
+  }
+
+  .nav-toggle {
+    display: block;
+    /* show hamburger only on mobile */
+    margin-left: auto;
+  }
+}
+/* ================== NEW STYLES ADDED ================== */
+/* Blog container refinements */
+.blog .post {
+  transition: transform 0.2s ease;
+}
+
+.blog .post:hover {
+  transform: translateY(-4px);
+}
+
+.blog .post-header h3 {
+  border-left: 4px solid var(--accent);
+  padding-left: 0.6rem;
+}
+
+.blog details {
+  margin: 0.8rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 0.6rem 0.9rem;
+}
+
+.blog summary {
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--brand);
+}
+
+.blog details[open] {
+  background: #fff;
+  border-color: var(--brand-weak);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.letter {
+  font-weight: 700;
+  color: var(--accent);
+  margin-right: 0.4rem;
+}
+
+.callout {
+  margin-top: 1.2rem;
+  padding: 1rem 1.2rem;
+  border-left: 5px solid var(--accent);
+  background: var(--accent-weak);
+  border-radius: 8px;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.center-quote {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 1rem 0 1.6rem;
+  font-style: italic;
+}
+
+ul.bullet {
+  list-style: none;
+  padding-left: 1.2rem;
+}
+
+ul.bullet li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+ul.bullet li::before {
+  content: "■";
+  /* square bullet */
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  /* burgundy square */
+  font-size: 0.75rem;
+  top: 0.35rem;
+}
+
+/* Children’s books grid */
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.book {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.book:hover {
+  transform: translateY(-4px);
+}
+
+.book h4 a {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.book h4 a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.book p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* Conference tips as cards */
+.post-body.conference {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.tip-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tip-card .letter {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.tip-card p {
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+/* Maxims styling */
+.blog .maxims details {
+  margin: 0.8rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  background: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.blog .maxims summary {
+  font-weight: 600;
+  color: var(--brand);
+  cursor: pointer;
+}
+
+.blog .maxims details[open] {
+  background: #fff;
+  border-color: var(--brand-weak);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.blog .maxims ul.bullet li {
+  position: relative;
+  margin: 0.5rem 0;
+  padding-left: 1.2rem;
+}
+
+.blog .maxims ul.bullet li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  top: 0.35rem;
+}
+
+/* Conference A–F boxes */
+.conference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.conference-box {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-left: 6px solid var(--accent);
+  /* burgundy accent */
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.conference-box:hover {
+  transform: translateY(-4px);
+}
+
+.conference-box .letter {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.conference-box p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  /* Stack sidebar and content in one column */
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    margin-bottom: 20px;
+    /* add spacing between avatar box and main content */
+  }
+
+  /* Adjust avatar so it looks balanced on mobile */
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
+@media (max-width: 768px) {
+  .contact {
+    list-style: none;
+    margin: 16px auto 10px;
+    /* auto left/right = centers block */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .contact a:hover {
+    text-decoration: underline;
+  }
+}
+/* ================== CONTINUATION: MAXIMS ON EXCELLENCE ================== */
+.blog .post-body details {
+  margin: 1rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  background: #fafafa;
+  transition: all 0.25s ease;
+}
+.blog .post-body details[open] {
+  background: #fff;
+  border-color: var(--brand-weak);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+.blog .post-body details[open] summary::after {
+  transform: rotate(-180deg);
+}
+.blog .post-body details summary {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--brand);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blog .post-body details summary::after {
+  content: "▼";
+  font-size: 0.8rem;
+  margin-left: 8px;
+  transition: transform 0.2s;
+}
+.blog .post-body details ul.bullet {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.8rem;
+}
+.blog .post-body details ul.bullet li {
+  background: #fdfdfd;
+  border-left: 4px solid var(--accent);
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.6rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.blog .post-body details ul.bullet li strong {
+  display: block;
+  font-weight: 600;
+  color: var(--brand);
+  margin-bottom: 0.25rem;
+}
+.blog .post-body details ul.bullet li em,
+.blog .post-body details ul.bullet li q {
+  display: block;
+  font-style: italic;
+  color: #555;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--accent-weak);
+  margin: 0.4rem 0;
+}
+.blog .post-body details p.reflection {
+  margin-top: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-left: 5px solid var(--brand-weak);
+  background: #f9fafc;
+  border-radius: 6px;
+  font-style: italic;
+  color: #374151;
+}
+
+/* ================== CONTINUATION: MAXIMS CARDS ================== */
+.blog .post-body ul.bullet {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+.blog .post-body ul.bullet li {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.2rem 1.2rem 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Fancy "bullet" icon */
+  /* Add space so text doesn’t overlap with icon */
+  padding-left: 2.2rem;
+}
+.blog .post-body ul.bullet li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.blog .post-body ul.bullet li::before {
+  content: "★";
+  /* star, you can swap with ✦, ✸, or a custom icon font */
+  color: var(--accent);
+  font-size: 1.1rem;
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+}
+.blog .post-body ul.bullet li strong {
+  display: block;
+  font-weight: 600;
+  color: var(--brand);
+  margin-bottom: 0.35rem;
+}
+.blog .post-body ul.bullet li em, .blog .post-body ul.bullet li q {
+  display: block;
+  font-style: italic;
+  color: #555;
+  border-left: 3px solid var(--accent-weak);
+  padding-left: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+/* ================== CONTINUATION: MAXIMS CARDS (EXOTIC + ALIGNED) ================== */
+.blog .post-body ul.bullet {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.2rem;
+}
+.blog .post-body ul.bullet li {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  padding: 2rem 1.2rem 1.4rem 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  /* Exotic icon centered at the top */
+}
+.blog .post-body ul.bullet li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+.blog .post-body ul.bullet li::before {
+  content: "❖";
+  display: block;
+  font-size: 1.6rem;
+  color: var(--brand);
+  margin: 0 auto 0.8rem auto;
+}
+.blog .post-body ul.bullet li strong {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--brand);
+  margin-bottom: 0.4rem;
+}
+.blog .post-body ul.bullet li em,
+.blog .post-body ul.bullet li q {
+  display: block;
+  font-style: italic;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* ================== CONTINUATION: MAXIMS CARDS (EXCELLENT & MOTIVATING) ================== */
+.blog .post-body ul.bullet {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.2rem;
+}
+.blog .post-body ul.bullet li {
+  background: #fff;
+  border: none;
+  /* remove any inherited border-left styles */
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 2.2rem 1.4rem 1.6rem 1.4rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  text-align: center;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  /* Exotic, motivating symbol */
+}
+.blog .post-body ul.bullet li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+.blog .post-body ul.bullet li::before {
+  content: "✺";
+  display: block;
+  font-size: 1.8rem;
+  color: #d4af37;
+  /* GOLD for excellence */
+  margin: 0 auto 0.8rem auto;
+}
+.blog .post-body ul.bullet li strong {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+  /* deep neutral, more professional */
+  margin-bottom: 0.4rem;
+}
+.blog .post-body ul.bullet li em,
+.blog .post-body ul.bullet li q {
+  display: block;
+  font-style: italic;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* -------- Tabs -------- */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--brand-weak);
+  background: var(--card);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.tab.active {
+  background: var(--brand);
+  color: #fff;
+}
+
+[data-tab-content] {
+  display: none;
+}
+
+[data-tab-content].active {
+  display: block;
+}
+
+/* ---- Tabs in Header ---- */
+.nav .tab {
+  color: #fff;
+  /* white text by default */
+  background: transparent;
+  /* no box */
+  border: none;
+  /* remove the white square look */
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav .tab.active {
+  border-bottom: 3px solid var(--accent);
+  /* underline the active tab */
+  color: var(--accent-weak);
+  /* highlight active tab */
+}
+
+[data-tab-content] {
+  display: none;
+}
+
+[data-tab-content].active {
+  display: block;
+}
+
+[data-tab-content] h2 {
+  margin-top: 2.5rem;
+  /* pushes headings down */
+}
+
+/* Only apply extra top padding to sections that were clipping */
+#research,
+#teaching,
+#cv {
+  padding-top: 100px;
+  /* space for fixed header */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+.button-buy {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: linear-gradient(135deg, #7b1e3a, #d62b70); /* burgundy → rose */
+  border: none;
+  border-radius: 50px; /* pill shape */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none; /* remove underline */
+}
+
+.button-buy:hover {
+  background: linear-gradient(135deg, #d62b70, #7b1e3a); /* flip gradient */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.button-buy:active {
+  transform: translateY(0); /* click feedback */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+<p>
+  <a class="button-buy" 
+     href="https://www.amazon.com/Politics-Government-Atinuke-Elizabeth-Ayowole/dp/B0DT9YJWFP?ref_=ast_author_dp_rw" 
+     target="_blank" 
+     rel="noopener">
+    Buy on Amazon
+  </a>
+</p>
+.book-cover {
+  width: 150px;              /* fixed, clean size */
+  height: auto;              /* keep proportions */
+  display: block;
+  margin: 0 auto 1rem auto;  /* center + spacing */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  object-fit: cover;         /* keeps it tidy if proportions differ */
+}
+
+.book img {
+  width: auto;            /* scale to the width of the box */
+  max-height: 220px;       /* don’t let it get too wide */
+  display: block;         
+  margin: 0 auto 1rem;    /* center image + spacing below */
+  border-radius: 8px;     /* rounded corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* subtle shadow */
+  object-fit: contain;     /* fit nicely inside box */
+}
+
+.book img {
+  width: auto;
+  max-height: 220px;  /* keeps all covers uniform */
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  object-fit: contain;
+}
+
+.buy-button {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.buy-button:hover {
+  background: #5a142b;  /* darker burgundy */
+  transform: translateY(-2px);
+}
+
+/* === Sidebar Alignment Fix === */
+
+/* Always center avatar, name, title, and links */
+.sidebar img.avatar,
+.sidebar h1.name,
+.sidebar .title,
+.sidebar .contact {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Keep facts left-aligned (no boxed style) */
+.sidebar .facts {
+  text-align: left;
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Desktop layout: sidebar on left, content on right */
+@media (min-width: 900px) {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr; /* sidebar + content */
+    gap: 40px;
+    align-items: start;
+  }
+
+  .sidebar {
+    margin-bottom: 0;
+  }
+}
+/* --- Blog subsection dropdown titles (e.g., Conferences A–F) --- */
+.post-body summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  list-style: none; /* remove default arrow spacing */
+}
+
+.post-body summary::marker {
+  content: ""; /* hide default disclosure triangle if you don’t want it */
+}
+
+.post-body details[open] summary {
+  color: #2563eb; /* highlight when expanded */
+}
+
+/* Contact Form Styles */
+.contact-form {
+  display: grid;
+  gap: 14px;
+  max-width: 500px;
+  /* ❌ remove margin: 0 auto; so it aligns left */
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 4px rgba(30, 58, 138, 0.4);
+}
+
+/* Left align contact form inside section */
+.section .contact-form {
+  margin-left: 0;   /* align to left */
+  margin-right: auto;
+  justify-self: start; /* grid-friendly alignment */
+}
