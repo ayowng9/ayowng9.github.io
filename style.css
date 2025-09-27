@@ -1217,3 +1217,19 @@ ul.bullet li::before {
   margin-right: auto;
   justify-self: start; /* grid-friendly alignment */
 }
+
+/* --- Teaching Evaluations Subsection --- */
+.evaluations-grid ul.list {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1rem 1.2rem;
+}
+
+.evaluations-grid ul.list li {
+  margin: 0.5rem 0;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
