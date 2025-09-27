@@ -350,14 +350,6 @@ nav a:hover {
   font-size: 1.15rem;
 }
 
-.teaching-grid ul.list {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  padding: 1rem 1.2rem;
-}
-
 .teaching-grid ul.list li {
   margin: 0.5rem 0;
   line-height: 1.55;
