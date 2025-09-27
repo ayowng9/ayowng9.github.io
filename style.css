@@ -336,6 +336,34 @@ nav a:hover {
   margin-top: 20px;
 }
 
+/* --- Teaching Evaluations Section --- */
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 1.5rem;
+}
+
+.teaching-grid h3 {
+  color: var(--brand);
+  margin-bottom: 0.6rem;
+  font-size: 1.15rem;
+}
+
+.teaching-grid ul.list {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1rem 1.2rem;
+}
+
+.teaching-grid ul.list li {
+  margin: 0.5rem 0;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
 /* -------------------- Blog Readability -------------------- */
 :root {
   --ink-strong: #111827;
