@@ -1246,3 +1246,15 @@ ul.bullet li::before {
   margin-bottom: 0.8rem;
 }
 
+.section {
+  padding: 3rem 1.5rem;
+}
+
+.section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.section h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
