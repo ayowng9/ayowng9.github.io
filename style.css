@@ -19,11 +19,6 @@
 }
 
 /* === Reset === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: "Inter", sans-serif;
@@ -1027,12 +1022,6 @@ ul.bullet li::before {
 }
 
 /* Only apply extra top padding to sections that were clipping */
-#research,
-#teaching,
-#cv {
-  padding-top: 100px;
-  /* space for fixed header */
-}
 
 .button {
   display: inline-block;
@@ -1094,22 +1083,12 @@ ul.bullet li::before {
 
 .book img {
   width: auto;            /* scale to the width of the box */
-  max-height: 220px;       /* don’t let it get too wide */
+  max-height: 220px;       /* don’t let it get too wide */ /* keeps all covers uniform */
   display: block;         
   margin: 0 auto 1rem;    /* center image + spacing below */
   border-radius: 8px;     /* rounded corners */
   box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* subtle shadow */
   object-fit: contain;     /* fit nicely inside box */
-}
-
-.book img {
-  width: auto;
-  max-height: 220px;  /* keeps all covers uniform */
-  display: block;
-  margin: 0 auto 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  object-fit: contain;
 }
 
 .buy-button {
@@ -1258,11 +1237,7 @@ ul.bullet li::before {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
-
-main {
-  padding-top: 2rem;
+body {
+  padding-top: 80px; /* match header height exactly */
 }
 
-main {
-  margin-top: 90px;   /* adjust if needed */
-}
