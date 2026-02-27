@@ -1233,3 +1233,16 @@ ul.bullet li::before {
   font-size: 0.95rem;
 }
 
+.workshop-intro {
+  background: #f8f9fb;
+  padding: 1.5rem;
+  margin: 1.5rem 0 2.5rem 0;
+  border-left: 4px solid #1f3a8a;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.workshop-intro p {
+  margin-bottom: 0.8rem;
+}
+
