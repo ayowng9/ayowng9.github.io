@@ -1262,3 +1262,7 @@ ul.bullet li::before {
 main {
   padding-top: 2rem;
 }
+
+main {
+  margin-top: 90px;   /* adjust if needed */
+}
