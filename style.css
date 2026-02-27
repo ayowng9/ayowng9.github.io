@@ -1241,3 +1241,7 @@ body {
   padding-top: 80px; /* match header height exactly */
 }
 
+/* Slightly reduce homepage top spacing */
+.hero-grid {
+  padding-top: 1rem;   /* was 2rem */
+}
