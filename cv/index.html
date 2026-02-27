@@ -1,23 +1,69 @@
 
-<!-- Contact under CV -->
-<h2>Contact</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Professor's Workshop | Atinuke Elizabeth Muili</title>
 
-<form action="https://formspree.io/f/mldprlpy" method="POST" class="contact-form">
-  <label for="name">Name</label>
-  <input type="text" name="name" id="name" required />
+  <!-- IMPORTANT -->
+  <link rel="stylesheet" href="/style.css">
+</head>
 
-  <label for="email">Your Email</label>
-  <input type="email" name="email" id="email" required />
+<body>
 
-  <label for="message">Message</label>
-  <textarea name="message" id="message" rows="5" required></textarea>
+<header class="site-header">
+  <div class="logo">Atinuke Elizabeth Muili</div>
 
-    <!-- 👇 Add this hidden input here -->
-  <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html" />
+  <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/research/">Research</a></li>
+      <li><a href="/teaching/">Teaching</a></li>
+      <li><a href="/blog/" class="active">The Professor's Workshop</a></li>
+      <li><a href="/cv/">CV</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
   
-  <button type="submit" class="button">Send Message</button>
-</form>
-  
+<section class="section">
+  <h2>CV</h2>
+
+  <p>
+    <a class="button" href="https://www.dropbox.com/" target="_blank">
+      Download CV (PDF)
+    </a>
+  </p>
 </section>
+
+<section class="section">
+  <h2>Contact</h2>
+
+  <form action="https://formspree.io/f/mldprlpy" method="POST" class="contact-form">
+
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required />
+
+    <label for="email">Your Email</label>
+    <input type="email" name="email" id="email" required />
+
+    <label for="message">Message</label>
+    <textarea name="message" id="message" rows="5" required></textarea>
+
+    <!-- IMPORTANT: use your real domain -->
+    <input type="hidden" name="_redirect" value="https://www.atinukeayowole.com/thank-you/" />
+
+    <button type="submit" class="button">Send Message</button>
+
+  </form>
+</section>
+
 </main>
 
+  <script src="/script.js"></script>
+</body>
+</html>
