@@ -1258,3 +1258,7 @@ ul.bullet li::before {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
+
+main {
+  padding-top: 2rem;
+}
