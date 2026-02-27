@@ -55,7 +55,10 @@
     <textarea name="message" id="message" rows="5" required></textarea>
 
     <!-- IMPORTANT: use your real domain -->
-    <input type="hidden" name="_redirect" value="https://www.atinukeayowole.com/thank-you/" />
+    <input type="hidden" name="_next" value="https://www.atinukeayowole.com/thank-you/" />
+
+    <!-- Don't show Formspree "thank you" page -->
+    <input type="hidden" name="_captcha" value="false">
 
     <button type="submit" class="button">Send Message</button>
 
